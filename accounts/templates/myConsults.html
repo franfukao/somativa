@@ -1,0 +1,21 @@
+{% extends 'default.html' %}
+{% block 'title' %}Medicos{% endblock %}
+{% load bootstrap5 %}
+
+{% block 'body' %}
+
+
+  <div class="row row-cols-1 row-cols-sm-6 sm-6">
+            {% for d in data %}
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body text-black bg-ligth">
+                    <h5 class="card-title">{{d.medic.name}}</h5>
+                    <p class="card-text">{{d.medic.specialty}}</p>
+                    <p class="card-text">{{d.date}}</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+  </div>
+{% endblock %}

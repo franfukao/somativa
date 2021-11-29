@@ -1,0 +1,18 @@
+{% extends 'default.html' %}
+{% block 'title' %}Register{% endblock %}
+{% load bootstrap5 %}
+
+{% block 'body' %}
+<br><br>
+<div class="container" style="width:800px; ">
+  <form method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <input class="btn btn-primary" type="submit" value="To Schedule">
+
+  </form>
+</div>
+<br><br>
+{% endblock %}

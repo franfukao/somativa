@@ -1,0 +1,27 @@
+{% extends 'default.html' %}
+
+{% block 'title' %}Login{% endblock %}
+
+{% block 'body' %}
+    <div class="container"
+         style="max-width:400px;
+         border:solid 1px #ccc;
+         padding:2rem; margin-top:3rem">
+
+        <h2 class="mt-4 mb-4  text-black" >Login</h2>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label  text-black">Usuário</label>
+                <input type="text" class="form-control" name="username" placeholder="Digite seu usuário" style="border: 2px solid black;">
+            </div>
+            <div class="mb-3">
+                <label class="form-label  text-black">Senha</label>
+                <input type="password" class="form-control" name="password" placeholder="Digite sua senha" style="border: 2px solid black;">
+            </div>
+            <button type="submit" class="btn btn-primary">Enter</button>
+            <a class="btn btn-outline-primary" href="{% url 'register'%} ">Cadastrar-se</a>
+        </form>
+
+    </div>
+{% endblock %}
